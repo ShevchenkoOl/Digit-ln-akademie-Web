@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="registration">
+      <h1>Přihláška na kurz</h1>
+      <label class="field"> Jméno: <input type="text" id="firstName" /> </label>
+      <label class="field">
+        Příjmení: <input type="text" id="lastName" />
+      </label>
+      <label class="check">
+        <input type="checkbox" />Chci dostávat informovat o dalších akcích
+      </label>
+      <label class="field">
+        Odkud o nás víte:
+        <select>
+          <option value="facebook">Facebook</option>
+          <option value="instagram">Instagram</option>
+          <option value="friends">Od známých</option>
+          <option value="other">Jiné…</option>
+        </select>
+      </label>
+      <div class="controls">
+        <button type="submit">Přihlásit</button>
+      </div>
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
