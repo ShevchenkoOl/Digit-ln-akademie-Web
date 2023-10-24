@@ -1,23 +1,16 @@
-import {predpoved} from './data.js';
+import { predpoved } from "./data.js";
 
-const urlParams = new URLSearchParams(window.location.search);
-const day = urlParams.get('den');
+const detailId = window.location.hash.slice(1);
+const detailData = predpoved[detailId];
+const weatherDetail = document.querySelector("#weather-detail");
 
-if (day && predpoved[day]) {
-    const data = predpoved[day];
-    const weatherDetail = document.getElementById('weather-detail');
-    weatherDetail.innerHTML = `
-        <h2>${data.den}</h2>
-        <p>Datum: ${data.datum}</p>
-        <p>Ranní teplota: ${data.ranni_teplota}°C</p>
-        <p>Odpolední teplota: ${data.odpoledni_teplota}°C</p>
-        <p>Večerní teplota: ${data.vecerni_teplota}°C</p>
-        <p>Stav počasí: ${data.stav_pocasi}</p>
-        <p>Tlak: ${data.tlak} hPa</p>
-        <p>${data.popis_pocasi}</p>
+weatherDetail.innerHTML = `
+        <h2>${detailData.den}</h2>
+        <p>Datum: ${detailData.datum}</p>
+        <p>Ranní teplota: ${detailData.ranni_teplota}°C</p>
+        <p>Odpolední teplota: ${detailData.odpoledni_teplota}°C</p>
+        <p>Večerní teplota: ${detailData.vecerni_teplota}°C</p>
+        <p>Stav počasí: ${detailData.stav_pocasi}</p>
+        <p>Tlak: ${detailData.tlak} hPa</p>
+        <p>${detailData.popis_pocasi}</p>
     `;
-} 
-// else {
-//     // Den nebyl nalezen
-//     alert('Neplatný den počasí.');
-// }

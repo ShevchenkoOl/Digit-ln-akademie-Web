@@ -27,7 +27,7 @@ const weatherCardElements = days.map(day => {
         <h2>${data.den}</h2>
         <p>Denní teplota: ${data.denni_teplota}°C</p>
         <p>Stav počasí: ${data.stav_pocasi}</p>
-        <a href="detail.html?den=${day}">Zobrazit detail</a>
+        <a href="detail.html#${day}">Zobrazit detail</a>
     `;
     return card;
 });

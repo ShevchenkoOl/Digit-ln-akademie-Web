@@ -1,4 +1,4 @@
-export const predpoved = {
+export const  predpoved = {
     pondeli: {
       den: "Pondělí",
       datum: "2023-10-02",
