@@ -1,19 +1,3 @@
-// import {predpoved} from './data.js';
- 
-// const days = ['pondeli', 'utery', 'streda', 'ctvrtek', 'patek', 'sobota', 'nedele'];
-// const week = document.querySelector('#week');
-
-// for (let i=0; i<days.length; i++){
-// const day = days[i];
-// const data = predpoved[day];
-// week.innerHTML = `
-// <h2>${data.den}</h2>
-// <p>${data.datum}</p>
-// <p>${data.denni_teplota}</p>
-// <p>${data.popis_pocasi}</p>`;
-// return 
-// }
-
 import { predpoved } from './data.js';
 
 const days = ['pondeli', 'utery', 'streda', 'ctvrtek', 'patek'];
@@ -35,3 +19,10 @@ const weatherCardElements = days.map(day => {
 weatherCardElements.forEach(card => {
     weatherCards.appendChild(card);
 });
+
+
+
+const average = (a, b) => {
+    return (a + b) / 2;
+  };                         // žádné volání funkce average(2,5)
+ 
