@@ -105,6 +105,7 @@ const filmy = [
   },
 ];
 
+
 const seznam = document.querySelector("#seznam-filmu");
 seznam.innerHTML = "";
 filmy.forEach((film) => {
@@ -121,28 +122,28 @@ filmy.forEach((film) => {
     />
     <div class="card-body">
       <h5 class="card-title">${film.nazev}</h5>
-      <p class="card-text">${film.popis}</p>
+      <p class="card-text" id="film-description">${film.popis.substring(0, 5)}...</p>
+      <button id='btn-vice'>Vice...</button>
       <a href="film.html" class="btn btn-primary">Přehrát</a>
     	</div>
 </div>`;
-  seznam.appendChild(filmCard);
+
+seznam.appendChild(filmCard);
+
+const vice = filmCard.querySelector('#btn-vice');
+const filmDescription = filmCard.querySelector('#film-description');
+let isOpen = false;
+
+vice.addEventListener("click", () => {
+   
+  if (isOpen) {
+    filmDescription.textContent = film.popis.substring(0, 5) + '...';
+  } else {
+    filmDescription.textContent = film.popis;
+  }
+
+  isOpen = !isOpen;
+} );
+  
 });
 
-{
-  /* <div class="col">
-  <div class="card">
-    <img
-      src="https://via.placeholder.com/780x520?text=Plak%C3%A1t"
-      width="780"
-      height="520"
-      class="card-img-top"
-      alt="plakát"
-    />
-    <div class="card-body">
-      <h5 class="card-title">Název filmu</h5>
-      <p class="card-text">Krátký popisek filmu.</p>
-      <a href="film.html" class="btn btn-primary">Přehrát</a>
-    </div>
-  </div>
-</div> */
-}
