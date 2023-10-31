@@ -122,6 +122,7 @@ filmy.forEach((film) => {
     />
     <div class="card-body">
       <h5 class="card-title">${film.nazev}</h5>
+      <p class="">${film.ochutnavka}</p>
       <p class="card-text" id="film-description">${film.popis.substring(0, 5)}...</p>
       <button id='btn-vice'>Vice...</button>
       <a href="film.html" class="btn btn-primary">Přehrát</a>
