@@ -1,0 +1,16 @@
+{
+  "name": "muj-projekt",
+  "version": "0.0.1",
+  "scripts":{
+"dev": "vite",
+"build": "vite build"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "glob": "^10.3.10",
+    "vite": "^4.4.11"
+  }
+}
