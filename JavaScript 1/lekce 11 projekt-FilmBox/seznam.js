@@ -123,16 +123,16 @@ filmy.forEach((film) => {
     <div class="card-body">
       <h5 class="card-title">${film.nazev}</h5>
       <p class="">${film.ochutnavka}</p>
-      <p class="card-text" id="film-description">${film.popis.substring(0, 5)}...</p>
-      <button id='btn-vice'>Vice...</button>
-      <a href="film.html" class="btn btn-primary">Přehrát</a>
-    	</div>
+      <p class="card-text" id="">${film.popis.substring(0, 5)}...</p>
+      <button class='btn-vice'>Vice...</button>
+      <a href="film.html#${film.id}" class="btn btn-primary">Přehrát</a>
+      </div>
 </div>`;
 
 seznam.appendChild(filmCard);
 
-const vice = filmCard.querySelector('#btn-vice');
-const filmDescription = filmCard.querySelector('#film-description');
+const vice = filmCard.querySelector('.btn-vice');
+const filmDescription = filmCard.querySelector('.card-text');
 let isOpen = false;
 
 vice.addEventListener("click", () => {

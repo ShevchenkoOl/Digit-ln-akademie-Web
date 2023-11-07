@@ -104,3 +104,65 @@ export const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+// //-----------------------------------Metodth Find---------------------------------------------------
+
+// // Получите id фильма из хэша и удалите символ '#'
+// const filmId = location.hash.slice(1);
+
+// // Найдите фильм с соответствующим id в массиве filmy
+// const selectedFilm = filmy.find(film => film.id === filmId);
+
+// // Если фильм найден, обновите информацию на странице
+// if (selectedFilm) {
+//   // Найдите элементы на странице, которые вы хотите обновить
+//   const cardTitle = document.querySelector('#detail-filmu .card-title');
+//   const cardText = document.querySelector('#detail-filmu .card-text');
+//   const img = document.querySelector('#detail-filmu img');
+
+//   // Обновите информацию на странице
+//   cardTitle.textContent = selectedFilm.nazev;
+//   cardText.textContent = selectedFilm.popis;
+//   img.src = selectedFilm.plakat.url;
+//   img.alt = 'plakát';
+//   img.width = selectedFilm.plakat.sirka;
+//   img.height = selectedFilm.plakat.vyska;
+// } 
+// // else {
+// //   // Если фильм не найден, вы можете вывести сообщение об ошибке или что-то еще
+// //   console.log('Film not found');
+// // }
+
+
+
+
+//-----------------------------------Metodth forEach---------------------------------------------------
+
+
+
+// Получите хэш-часть URL
+const hash = window.location.hash;
+
+// Удалите символ '#' из хэша
+const filmId = hash.slice(1); // Удаляем первый символ (решетку)
+
+// Определите фильм на основе filmId
+let selectedFilm = null;
+
+filmy.forEach((film) => {
+  if (film.id === filmId) {
+    selectedFilm = film;
+  }
+});
+
+// Теперь 'selectedFilm' содержит выбранный фильм, если он был найден по 'filmId'
+if (selectedFilm) {
+  // Впишите информацию о фильме на страницу
+  const cardTitle = document.querySelector('.card-title');
+  const cardText = document.querySelector('.card-text');
+  const placat = document.querySelector('.img-fluid');
+
+  cardTitle.textContent = selectedFilm.nazev;
+  cardText.textContent = selectedFilm.popis;
+  placat.src = selectedFilm.plakat.url;
+}
