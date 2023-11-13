@@ -215,16 +215,15 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     checkBox.classList.add("is-invalid");
   } else {
-	// const newTextElement = document.createElement("p");
-    // newTextElement.classList.add("card-text");
-    // newTextElement.textContent = input.value;
+	const newTextElement = document.createElement("p");
+    newTextElement.classList.add("card-text");
+    newTextElement.textContent = input.value;
 
     input.classList.remove("is-invalid");
     inputMassage(event);
     checkBox.classList.remove("is-invalid");
 	checkBox.checked = false;
 	form.textContent = input.value;
-	// form.style.display = "none";
-	// form.appendChild(newTextElement);
+	 form.appendChild(newTextElement);
   }
 });
