@@ -227,3 +227,26 @@ form.addEventListener("submit", (event) => {
 	 form.appendChild(newTextElement);
   }
 });
+
+const playElement = document.getElementById('prehravac');
+const videoElement = document.querySelector('video');
+const pauseElement = document.querySelector('.pause');
+
+if (playElement && videoElement) {
+  playElement.addEventListener('click', function() {
+    if (videoElement.paused) {
+    videoElement.play();
+  }
+  });
+  pauseElement.addEventListener('click', function() {
+    if (!videoElement.paused) {
+      videoElement.pause();
+    }
+  });
+  videoElement.addEventListener('playing', function() {
+playElement.classList.add('playing');
+  });
+  videoElement.addEventListener('pause', function() {
+    playElement.classList.remove('playing');
+  });
+}
