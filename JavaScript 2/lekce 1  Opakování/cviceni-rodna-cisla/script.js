@@ -59,14 +59,61 @@ document.body.innerHTML += `není neplatné. Důvod: ${result}. ❌<br>`;
 
 const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-const isDigit = (input) => {
-  let found = false;
-  digits.forEach((digit) => {
-    if (input.length >= 1 && input.includes(digit)){
-      found = true;
+const isDigit = (input) => input.length === 1 && digits.includes(input);
+
+  // // let found = false;
+  // // digits.forEach((digit) => {
+  // //   if (input.length >= 1 && input.includes(digit)){
+  // //     found = true;
+  //   }
+  // })
+  // return found;
+
+const logInvalidCharacters = (vstup) => {
+  Array.from(vstup).forEach((input) => {
+    if(!isDigit(input)){
+console.log(input);
     }
-  })
-  return found;
+  });
 }
 
-console.log(isDigit('sss3'));
+logInvalidCharacters('3sd14');
+
+
+//----------------------------------------------------------------
+
+const validateCharacters = (input) => {
+  let result = [];
+  Array.from(input).forEach((znak) => {
+result.push({char: znak, digit: isDigit(znak)});
+  })
+   console.log(result);
+};
+
+validateCharacters('aas147855');
+
+
+//----------------------------------------Forms kontrolu rodneho cisla-------------
+
+const form = document.querySelector('#formular');
+const text = document.querySelector('#vystup');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const vstup = form.querySelector('input').value;
+if (checkBirthID(vstup) === 'ok') {
+  text.textContent = 'je platné. ✔️';
+} else {
+text.textContent = `❌ V rodném čísle jsou chyby.`;
+}
+
+
+const overit = validateCharacters(vstup);
+const cyfra = document.querySelector('#cyfra');
+
+overit.forEach((vstup) => {
+  cyfra.innerHTML += `<span style="background-color: ${znak ? '#00DD00' : '#FF8686'}">
+  ${char}
+</span>`;
+})
+});
